@@ -1,0 +1,32 @@
+engine:
+  iWantRandomValue:
+    module: randomGen
+    parent: [ ]
+    queueSize: 1
+    parallels: 1
+    config: {}
+
+  TrebleIt:
+    module: treble
+    parent:
+      - iWantRandomValue
+    queueSize: 1
+    parallels: 1
+    config: {}
+
+  TrebleIt2:
+    module: treble
+    parent:
+      - iWantRandomValue
+    queueSize: 1
+    parallels: 1
+    config: {}
+
+  DumpTrebleIt:
+    module: print
+    parent:
+      - TrebleIt
+      - TrebleIt2
+    queueSize: 1
+    parallels: 1
+    config: {}
